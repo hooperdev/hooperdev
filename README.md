@@ -1,6 +1,6 @@
-<h1 align="center">Hello, world! I'm Alex.</h1>
-<h3 align="center">Jag får saker att fungera.</h3>
-I'm a software engineer with a specialty in game development and mobile app development. However, lately I've learned to really enjoy Svelte. Many of my projects are not available on github because Unreal Engine does not play well with Github, and especially not with their LFS quotas. I've been emailed once or twice about that... sorry github!
+<h1 align="center">Alex H.</h1>
+<h3 align="center">Prgrmmr frvr!</h3>
+I'm a software engineer with a specialty in game development and mobile app development. However, lately I've learned to really enjoy Svelte. Many of my projects are not available on github because Unreal Engine does not play well with Github, and especially not with their LFS quotas....
 
 - 🔭 I’m currently working on [Myself!](https://www.alexhooper.dev)
 
