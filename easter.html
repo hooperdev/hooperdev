@@ -17,6 +17,11 @@
       cursor: none;
     }
 
+    @media (hover: none) and (pointer: coarse) {
+      body { cursor: auto; }
+      #cursor { display: none; }
+    }
+
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -233,13 +238,12 @@
     for (let i = 0; i < 8; i++) spawnEgg();
     setInterval(spawnEgg, 3000);
 
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+    function handleMove(x, y) {
+      mouseX = x;
+      mouseY = y;
 
       cursor.style.left = mouseX + 'px';
       cursor.style.top = mouseY + 'px';
-
 
       // Trail
       trailCounter++;
@@ -256,12 +260,29 @@
         setTimeout(() => trail.remove(), 600);
       }
 
-      // Flower on click trail
+      // Flower on move trail
       flowerCounter++;
       if (flowerCounter % 20 === 0) {
         spawnFlower(mouseX, mouseY);
       }
-    });
+    }
+
+    document.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+
+    document.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      const t = e.touches[0];
+      handleMove(t.clientX, t.clientY);
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => spawnFlower(t.clientX + (Math.random()-0.5)*40, t.clientY + (Math.random()-0.5)*40), i * 80);
+      }
+    }, { passive: false });
+
+    document.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const t = e.touches[0];
+      handleMove(t.clientX, t.clientY);
+    }, { passive: false });
 
     document.addEventListener('click', (e) => {
       for (let i = 0; i < 3; i++) {
