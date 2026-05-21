@@ -1,3 +1,5 @@
-I'm alex.
+# Hej! I'm Alex. 
+I code stuff and pretend I know more Swedish than I actually do.
 
-rust is the best language and also the worst monstrosity ever released onto mankind.
+I'm the lead developer behind [af-oatts](https://github.com/af-oatts).
+
